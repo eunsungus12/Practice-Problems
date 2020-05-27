@@ -1,3 +1,5 @@
+//https://leetcode.com/explore/interview/card/amazon/77/linked-list/513/
+
 /**
  * Definition for singly-linked list.
  * public class ListNode {
