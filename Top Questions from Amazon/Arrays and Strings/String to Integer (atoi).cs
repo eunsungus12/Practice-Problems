@@ -19,6 +19,7 @@ public class Solution {
 		} else {
 			string[] arr = str.Split(" ");
 			if (int.TryParse(arr[0].Substring(1), out i)) {
+				Console.WriteLine(String.Compare(arr[0], Int32.MaxValue.ToString(), StringComparison.OrdinalIgnoreCase));
 				if (String.Compare(arr[0], Int32.MaxValue.ToString(), StringComparison.OrdinalIgnoreCase) < 0) {
 					int val = 0;
 					Int32.TryParse(arr[0], out val);
