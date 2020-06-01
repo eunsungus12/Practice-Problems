@@ -2,20 +2,22 @@
 
 public class Solution {
     public IList<string> LetterCombinations(string digits) {
-        if (digits.Length == 0) return new List<string>();
         List<string> result = new List<string>();
+        if (digits.Length == 0) return result;
         Backtrack("", digits, result);
         return result;
     }
 
-    public void Backtrack(string combo, string digits, List<string> result) {
+    public void Backtrack(string combination, string digits, List<string> result) {
         if (digits.Length == 0) {
-            result.Add(combo);
+            result.Add(combination);
         } else {
-            string digit = digits.Substring(0, 1);
-            string letters = GetTelephone()[digit];
-            foreach(var s in letters) {
-                Backtrack(combo + s.ToString(), digits.Substring(1), result);
+            string firstDigit = digits.Substring(0,1);
+            if (Int32.TryParse(firstDigit, out int num)) {
+                string letters = GetTelephone()[firstDigit];
+                foreach(char letter in letters) {
+                    Backtrack(combination + letter.ToString(), digits.Substring(1, digits.Length-1), result);
+                }
             }
         }
     }
@@ -33,3 +35,23 @@ public class Solution {
         return tel;
     }
 }
+
+// Leetcode Solution
+    // public IList<string> LetterCombinations(string digits) {
+    //     if (digits.Length == 0) return new List<string>();
+    //     List<string> result = new List<string>();
+    //     Backtrack("", digits, result);
+    //     return result;
+    // }
+
+    // public void Backtrack(string combo, string digits, List<string> result) {
+    //     if (digits.Length == 0) {
+    //         result.Add(combo);
+    //     } else {
+    //         string digit = digits.Substring(0, 1);
+    //         string letters = GetTelephone()[digit];
+    //         foreach(var s in letters) {
+    //             Backtrack(combo + s.ToString(), digits.Substring(1), result);
+    //         }
+    //     }
+    // }
