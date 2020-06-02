@@ -2,7 +2,19 @@
 
 public class LRUCache {
 
-    Dictionary<int, int> dict = new Dictionary<int, int>();
+    public class DoubleLinkedList {
+        private int val;
+        private DoubleLinkedList left;
+        private DoubleLinkedList right;
+        public DoubleLinkedList(int val, DoubleLinkedList left = null, DoubleLinkedList right = null) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+        public int val { get; set; }
+        public DoubleLinkedList left { get; set; }
+        public DoubleLinkedList  right { get; set; }
+    }
 
     public LRUCache(int capacity) {
         int capacity = capacity;
