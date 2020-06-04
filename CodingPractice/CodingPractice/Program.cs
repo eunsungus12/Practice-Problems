@@ -29,6 +29,8 @@ namespace CodingPractice
             // Container_With_Most_Water.Test();
             // Integer_to_Roman.Test();
             // Roman_to_Integer.Test();
+            // _3Sum.Test();
+            // _3Sum_Closest.Test();
         }
     }
     class SlidingWindow
