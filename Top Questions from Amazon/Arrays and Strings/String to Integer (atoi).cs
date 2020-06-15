@@ -5,7 +5,7 @@ public class Solution {
 		str.Trim();
 		if (str.Length == 0) return 0;
         int i = 0;
-		if (str.Substring(1) != "-" && int.TryParse(str.Substring(1, 1), out i) == false) return 0;
+		if (str.Substring(1) != "-" && int.TryParse(str.Substring(0, 1), out i) == false) return 0;
 		if (str.Remove(0, 1) == "-") {
 			string[] arr = str.Split(" ");
 			if (int.TryParse(arr[0].Substring(1), out i)) {

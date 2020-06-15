@@ -1,11 +1,10 @@
 // https://leetcode.com/problems/lru-cache/
 
 public class LRUCache {
-
-    Dictionary<int, int> dict = new Dictionary<int, int>();
-
+    
+    private DoubleLinkedList node;
     public LRUCache(int capacity) {
-        int capacity = capacity;
+        node.val 
     }
     
     public int Get(int key) {
